@@ -32,9 +32,13 @@ redisTemplate.opsForZSet();//操作有序set
 ```
 
 操作字符串的Demo及工具类，封装在com.liumapp.redisoperator.string下。
+
 操作Hash的Demo及工具类，封装在com.liumapp.redisoperator.hash下。
+
 操作List的Demo及工具类，封装在com.liumapp.redisoperator.list下。
+
 操作Set的Demo及工具类，封装在com.liumapp.redisoperator.set下。
+
 操作Zset的Demo及工具类，封装在com.liumapp.redisoperator.zset下。
 
 ### StringRedisTemplate

@@ -1,5 +1,7 @@
 package com.liumapp.redisoperator;
 
+import com.liumapp.redisoperator.string.StringUtil;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -10,5 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Main {
 
+    @Bean
+    public StringUtil stringUtil () {
+        return new StringUtil();
+    }
 
 }
