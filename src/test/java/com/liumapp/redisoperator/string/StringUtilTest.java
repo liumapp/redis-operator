@@ -2,6 +2,7 @@ package com.liumapp.redisoperator.string;
 
 import com.liumapp.redisoperator.Main;
 import com.liumapp.redisoperator.config.RedisConfig;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,27 @@ public class StringUtilTest {
     public void set() {
         stringUtil.set("name" , "lm");
         System.out.println(stringUtil.get("name"));
+        Assert.assertEquals("lm" , stringUtil.get("name"));
+    }
+
+    @Test
+    public void setOffset() {
+        stringUtil.set("name" , "hello world");
+        stringUtil.set("name" , "liumapp" , 6);
+        System.out.println(stringUtil.get("name"));
+        Assert.assertEquals("hello liumapp" , stringUtil.get("name"));
+    }
+
+    @Test
+    public void setIfAbsent() {
+        if (stringUtil.setIfAbsent("nothing" , "something")) {
+            System.out.println("nothing未存在，将插入something");
+            System.out.println("something is : " + stringUtil.get("nothing"));
+        } else {
+            System.out.println("nothing已经存在，不会插入something");
+            System.out.println("something is : " + stringUtil.get("nothing"));
+        }
+        Assert.assertEquals("something" , stringUtil.get("nothing"));
     }
 
 }
