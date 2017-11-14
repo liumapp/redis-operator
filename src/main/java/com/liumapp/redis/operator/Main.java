@@ -7,6 +7,7 @@ import com.liumapp.redis.operator.string.StringUtil;
 import com.liumapp.redis.operator.zset.ZsetUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 /**
  * Created by liumapp on 9/28/17.

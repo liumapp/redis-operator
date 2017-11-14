@@ -16,4 +16,5 @@ public class HashUtil {
     @Resource(name = "redisTemplate")
     private HashOperations hashOps;
 
+    
 }

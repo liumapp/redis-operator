@@ -3,6 +3,25 @@ using redis in SpringBoot , with 5 kinds of data structure.
 
 项目正在开发中，请勿使用
 
+## 如何使用
+
+首先通过Maven引入项目：
+
+    <dependency>
+        <groupId>com.liumapp.redis</groupId>
+        <artifactId>redis-operator</artifactId>
+        <version>v1.0.0</version>
+    </dependency>
+    
+然后在yaml文件中进行Redis服务的配置：
+
+    liumapp:
+      redis:
+        hostName: localhost
+        port: 6379
+        password: adminadmin
+   
+
 ## 注意事项
 
 ### 数据类型
@@ -52,3 +71,4 @@ redisTemplate.opsForZSet();//操作有序set
 * StringRedisTemplate默认采用的是String的序列化策略来保存key和value，而RedisTemplate默认采用的是JDK的序列化策略。
 
 * 这个项目几乎引用的全部都是RedisTemplate
+
