@@ -1,4 +1,4 @@
-package com.liumapp.redisoperator.zset;
+package com.liumapp.redis.redisoperator.hash;
 
 import org.springframework.stereotype.Component;
 
@@ -8,5 +8,8 @@ import org.springframework.stereotype.Component;
  * home-page:http://www.liumapp.com
  */
 @Component
-public class ZsetUtil {
+public class HashUtil {
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.liumapp.redisoperator.set;
+package com.liumapp.redis.redisoperator.set;
 
 import org.springframework.stereotype.Component;
 

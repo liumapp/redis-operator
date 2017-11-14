@@ -3,4 +3,4 @@
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com
  */
-package com.liumapp.redisoperator;
+package com.liumapp.redis.redisoperator;

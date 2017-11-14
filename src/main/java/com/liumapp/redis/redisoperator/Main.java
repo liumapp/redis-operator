@@ -1,6 +1,6 @@
-package com.liumapp.redisoperator;
+package com.liumapp.redis.redisoperator;
 
-import com.liumapp.redisoperator.string.StringUtil;
+import com.liumapp.redis.redisoperator.string.StringUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

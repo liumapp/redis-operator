@@ -1,4 +1,4 @@
-package com.liumapp.redisoperator.hash;
+package com.liumapp.redis.redisoperator.list;
 
 import org.springframework.stereotype.Component;
 
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
  * home-page:http://www.liumapp.com
  */
 @Component
-public class HashUtil {
+public class ListUtil {
 
-
+    
 
 }
