@@ -1,6 +1,9 @@
 package com.liumapp.redis.operator.zset;
 
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * Created by liumapp on 11/13/17.
@@ -9,4 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ZsetUtil {
+
+    @Resource(name = "redisTemplate")
+    private ZSetOperations zsetOps;
+
 }

@@ -1,7 +1,10 @@
 package com.liumapp.redis.operator;
 
+import com.liumapp.redis.operator.hash.HashUtil;
 import com.liumapp.redis.operator.list.ListUtil;
+import com.liumapp.redis.operator.set.SetUtil;
 import com.liumapp.redis.operator.string.StringUtil;
+import com.liumapp.redis.operator.zset.ZsetUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,6 +24,21 @@ public class Main {
     @Bean
     public ListUtil listUtil () {
         return new ListUtil();
+    }
+
+    @Bean
+    public HashUtil hashUtil () {
+        return new HashUtil();
+    }
+
+    @Bean
+    public SetUtil setUtil () {
+        return new SetUtil();
+    }
+
+    @Bean
+    public ZsetUtil zsetUtil () {
+        return new ZsetUtil();
     }
 
 }

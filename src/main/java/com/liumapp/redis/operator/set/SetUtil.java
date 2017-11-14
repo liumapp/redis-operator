@@ -1,6 +1,9 @@
 package com.liumapp.redis.operator.set;
 
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * Created by liumapp on 11/13/17.
@@ -9,4 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SetUtil {
+
+    @Resource(name = "redisTemplate")
+    private SetOperations setOps;
+
 }
