@@ -1,4 +1,4 @@
-package com.liumapp.redis.redisoperator.list;
+package com.liumapp.redis.operator.zset;
 
 import org.springframework.stereotype.Component;
 
@@ -8,8 +8,5 @@ import org.springframework.stereotype.Component;
  * home-page:http://www.liumapp.com
  */
 @Component
-public class ListUtil {
-
-    
-
+public class ZsetUtil {
 }

@@ -1,4 +1,4 @@
-package com.liumapp.redis.redisoperator.string;
+package com.liumapp.redis.operator.string;
 
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
@@ -91,7 +91,7 @@ public class StringUtil {
      * @param num
      * @return
      */
-    public Long increment (String key , Long num) {
+    public Long increment (String key , long num) {
         return valOps.increment(key , num);
     }
 
@@ -114,7 +114,7 @@ public class StringUtil {
         valOps.append(key , value);
     }
 
-    public String get (String key , Long start , Long end) {
+    public String get (String key , long start , long end) {
         return valOps.get(key , start , end);
     }
 
@@ -136,11 +136,11 @@ public class StringUtil {
      * @param offset
      * @param value
      */
-    public void setBit (String key , Long offset , boolean value) {
+    public void setBit (String key , long offset , boolean value) {
         valOps.setBit(key , offset , value);
     }
 
-    public boolean getBit (String key , Long offset) {
+    public boolean getBit (String key , long offset) {
         return valOps.getBit(key , offset);
     }
 

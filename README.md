@@ -31,15 +31,17 @@ redisTemplate.opsForSet();//操作set
 redisTemplate.opsForZSet();//操作有序set
 ```
 
-操作字符串的Demo及工具类，封装在com.liumapp.redisoperator.string下。
+操作字符串的工具类，封装在com.liumapp.redis.operator.string下。
 
-操作Hash的Demo及工具类，封装在com.liumapp.redisoperator.hash下。
+操作Hash的工具类，封装在com.liumapp.redis.operator.hash下。
 
-操作List的Demo及工具类，封装在com.liumapp.redisoperator.list下。
+操作List的工具类，封装在com.liumapp.redis.operator.list下。
 
-操作Set的Demo及工具类，封装在com.liumapp.redisoperator.set下。
+操作Set的工具类，封装在com.liumapp.redis.operator.set下。
 
-操作Zset的Demo及工具类，封装在com.liumapp.redisoperator.zset下。
+操作Zset的工具类，封装在com.liumapp.redis.operator.zset下。
+
+测试Demo请见test目录。
 
 ### StringRedisTemplate
 
@@ -48,3 +50,5 @@ redisTemplate.opsForZSet();//操作有序set
 * 数据并不是共通的，StringRedisTemplate管理的数据，RedisTemplate是拿不到的。同理，StringRedisTemplate也拿不到RedisTemplate下面的数据。
 
 * StringRedisTemplate默认采用的是String的序列化策略来保存key和value，而RedisTemplate默认采用的是JDK的序列化策略。
+
+* 这个项目几乎引用的全部都是RedisTemplate

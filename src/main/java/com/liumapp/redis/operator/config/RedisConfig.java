@@ -1,4 +1,4 @@
-package com.liumapp.redis.redisoperator.config;
+package com.liumapp.redis.operator.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

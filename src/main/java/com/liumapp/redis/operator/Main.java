@@ -1,6 +1,7 @@
-package com.liumapp.redis.redisoperator;
+package com.liumapp.redis.operator;
 
-import com.liumapp.redis.redisoperator.string.StringUtil;
+import com.liumapp.redis.operator.list.ListUtil;
+import com.liumapp.redis.operator.string.StringUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +16,11 @@ public class Main {
     @Bean
     public StringUtil stringUtil () {
         return new StringUtil();
+    }
+
+    @Bean
+    public ListUtil listUtil () {
+        return new ListUtil();
     }
 
 }

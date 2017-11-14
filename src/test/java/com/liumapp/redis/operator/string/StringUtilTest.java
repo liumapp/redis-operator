@@ -1,7 +1,7 @@
-package com.liumapp.redis.redisoperator.string;
+package com.liumapp.redis.operator.string;
 
-import com.liumapp.redis.redisoperator.Main;
-import com.liumapp.redis.redisoperator.config.RedisConfig;
+import com.liumapp.redis.operator.Main;
+import com.liumapp.redis.operator.config.RedisConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
