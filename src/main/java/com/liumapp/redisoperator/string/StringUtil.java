@@ -4,6 +4,8 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -60,5 +62,88 @@ public class StringUtil {
     public boolean setIfAbsent (String key , Object value) {
         return valOps.setIfAbsent(key , value);
     }
+
+    /**
+     * 批量添加
+     * @param map
+     */
+    public void multiSet (HashMap<String , String> map) {
+        valOps.multiSet(map);
+    }
+
+    public List<Object> multiGet (List<String> listKey) {
+        return valOps.multiGet(listKey);
+    }
+
+    /**
+     * 设置value的同时返回旧值
+     * @param key
+     * @param value
+     * @return
+     */
+    public Object getAndSet (String key , Object value) {
+        return valOps.getAndSet(key , value);
+    }
+
+    /**
+     * 在原来数值的基础上自增num的值
+     * @param key
+     * @param num
+     * @return
+     */
+    public Long increment (String key , Long num) {
+        return valOps.increment(key , num);
+    }
+
+    /**
+     * num也可以是浮点数
+     * @param key
+     * @param num
+     * @return
+     */
+    public Double increment (String key , Double num) {
+        return valOps.increment(key , num);
+    }
+
+    /**
+     * 在原来字符串的末尾追加value
+     * @param key
+     * @param value
+     */
+    public void append (String key , String value) {
+        valOps.append(key , value);
+    }
+
+    public String get (String key , Long start , Long end) {
+        return valOps.get(key , start , end);
+    }
+
+    /**
+     * 返回value值的长度
+     * @param key
+     * @return
+     */
+    public Long size (String key) {
+        return valOps.size(key);
+    }
+
+    /**
+     * 对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)
+     * key键对应的值value对应的ascii码,在offset的位置(从左向右数)变为value
+     * true:设置为1
+     * false:设置为0
+     * @param key
+     * @param offset
+     * @param value
+     */
+    public void setBit (String key , Long offset , boolean value) {
+        valOps.setBit(key , offset , value);
+    }
+
+    public boolean getBit (String key , Long offset) {
+        return valOps.getBit(key , offset);
+    }
+
+
 
 }
