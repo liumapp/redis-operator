@@ -21,8 +21,8 @@ public class StringUtil {
 
     /**
      * 设置一个字符串的值
-     * @param key
-     * @param value
+     * @param key Redis-key
+     * @param value Redis-value
      */
     public void set (String key , String value) {
         valOps.set(key , value);
@@ -30,9 +30,9 @@ public class StringUtil {
 
     /**
      * 偏移offset的位置后，再设置value的值
-     * @param key
-     * @param value
-     * @param offset
+     * @param key Redis-key
+     * @param value Redis-value
+     * @param offset offset
      */
     public void set (String key , String value , long offset ) {
         valOps.set(key , value , offset);
@@ -40,10 +40,10 @@ public class StringUtil {
 
     /**
      * 设置指定时间内有效的value
-     * @param key
-     * @param value
-     * @param timeout
-     * @param unit
+     * @param key Redis-key
+     * @param value Redis-value
+     * @param timeout limited time
+     * @param unit TimeUnit
      */
     public void set (String key , String value , long timeout , TimeUnit unit) {
         valOps.set(key , value , timeout , unit.SECONDS);
@@ -55,9 +55,9 @@ public class StringUtil {
 
     /**
      * 如何key已经存在，则不插入value，否则插入并返回true
-     * @param key
-     * @param value
-     * @return
+     * @param key Redis-key
+     * @param value Redis-value
+     * @return return
      */
     public boolean setIfAbsent (String key , Object value) {
         return valOps.setIfAbsent(key , value);
@@ -65,7 +65,7 @@ public class StringUtil {
 
     /**
      * 批量添加
-     * @param map
+     * @param map Redis-map
      */
     public void multiSet (HashMap<String , String> map) {
         valOps.multiSet(map);
@@ -77,9 +77,9 @@ public class StringUtil {
 
     /**
      * 设置value的同时返回旧值
-     * @param key
-     * @param value
-     * @return
+     * @param key Redis-key
+     * @param value Redis-value
+     * @return return
      */
     public Object getAndSet (String key , Object value) {
         return valOps.getAndSet(key , value);
@@ -87,9 +87,9 @@ public class StringUtil {
 
     /**
      * 在原来数值的基础上自增num的值
-     * @param key
-     * @param num
-     * @return
+     * @param key Redis-key
+     * @param num number
+     * @return return
      */
     public Long increment (String key , long num) {
         return valOps.increment(key , num);
@@ -97,9 +97,9 @@ public class StringUtil {
 
     /**
      * num也可以是浮点数
-     * @param key
-     * @param num
-     * @return
+     * @param key Redis-key
+     * @param num number
+     * @return return
      */
     public Double increment (String key , Double num) {
         return valOps.increment(key , num);
@@ -107,8 +107,8 @@ public class StringUtil {
 
     /**
      * 在原来字符串的末尾追加value
-     * @param key
-     * @param value
+     * @param key Redis-key
+     * @param value Redis-value
      */
     public void append (String key , String value) {
         valOps.append(key , value);
@@ -120,8 +120,8 @@ public class StringUtil {
 
     /**
      * 返回value值的长度
-     * @param key
-     * @return
+     * @param key Redis-key
+     * @return return
      */
     public Long size (String key) {
         return valOps.size(key);
@@ -132,9 +132,9 @@ public class StringUtil {
      * key键对应的值value对应的ascii码,在offset的位置(从左向右数)变为value
      * true:设置为1
      * false:设置为0
-     * @param key
-     * @param offset
-     * @param value
+     * @param key Redis-key
+     * @param offset offset
+     * @param value Redis-value
      */
     public void setBit (String key , long offset , boolean value) {
         valOps.setBit(key , offset , value);

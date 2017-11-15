@@ -9,11 +9,21 @@
 
   <name>redis-operator</name>
   <url>http://maven.apache.org</url>
+  <description>using redis in SpringBoot , with 5 kinds of data structure.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springboot.version>1.5.6.RELEASE</springboot.version>
   </properties>
+
+  <developers>
+    <developer>
+      <id>liumapp</id>
+      <name>liumapp</name>
+      <url>http://www.liumapp.com</url>
+      <email>liumapp.com@gmail.com</email>
+    </developer>
+  </developers>
 
   <dependencies>
     <dependency>
@@ -33,4 +43,88 @@
       <version>${springboot.version}</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License v3.0</name>
+      <url>http://www.gnu.org/licenses/agpl-3.0.html</url>
+      <distribution>repo</distribution>
+      <comments>redis operator</comments>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/liumapp/redis-operator.git</connection>
+    <developerConnection>scm:git:https://github.com/liumapp/redis-operator.git</developerConnection>
+    <url>https://github.com/liumapp/redis-operator</url>
+    <tag>v${project.version}</tag>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <name>Maven Central Staging Repository</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
 </project>
