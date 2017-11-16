@@ -20,6 +20,7 @@ using redis in SpringBoot , with 5 kinds of data structure.
         hostName: localhost
         port: 6379
         password: adminadmin
+        dbIndex: 0
    
 
 ## 注意事项

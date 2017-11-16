@@ -115,6 +115,16 @@ public class ListUtil {
     }
 
     /**
+     * 批量作推元素
+     * @param key 节点的key
+     * @param values 多个值
+     * @return long index
+     */
+    public Long leftPushAll(String key , String... values ) {
+        return listOps.leftPushAll(key , values);
+    }
+
+    /**
      * 只有存在key对应的列表才能将这个value值插入到key所对应的列表中
      * @param key Redis-key
      * @param value Redis-value
