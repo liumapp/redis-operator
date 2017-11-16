@@ -63,6 +63,34 @@ public class ListUtilTest {
         System.out.println("insert id is : " + result3);
     }
 
+    /**
+     * 请先运行leftpushall和leftpush这两个测试方法
+     * 把php修改为c
+     */
+    @Test
+    public void set () {
+        String key = "languagetype";
+        System.out.println("the old data is : " + listUtil.range(key , 0 , -1));
+
+        System.out.println("change php to c :");
+        listUtil.set(key , (long) 2 , "c");
+
+        System.out.println("the new data is : " + listUtil.range(key , 0 , -1));
+    }
+
+    /**
+     * 请先运行leftpushall leftpush set 这三个测试方法
+     * 把c删除 第一次出现的c
+     */
+    @Test
+    public void remove () {
+        String key = "languagetype";
+        System.out.println("the old data is : " + listUtil.range(key , 0 , -1));
+
+        listUtil.remove(key , (long) 1 , "c");
+
+        System.out.println("the new data is : " + listUtil.range(key , 0 , -1));
+    }
 
 
 }

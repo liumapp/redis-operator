@@ -206,7 +206,7 @@ public class ListUtil {
      * @param index list-index
      * @param value Redis-value
      */
-    public void set(String key , Long index , Object value) {
+    public void set(String key , long index , Object value) {
         listOps.set(key , index , value);
     }
 
