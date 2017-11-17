@@ -1,6 +1,8 @@
 package com.liumapp.redis.operator.hash;
 
+import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -112,6 +114,11 @@ public class HashUtil {
         return hashOps.entries(hashKey);
     }
 
-        
+    /**
+     * 迭代查询散列集中的数据
+     */
+    public Cursor<Map.Entry<String , Object>> scan (Object hashKey , ScanOptions scanOptions ) {
+        return hashOps.scan(hashKey , scanOptions);
+    }
 
 }

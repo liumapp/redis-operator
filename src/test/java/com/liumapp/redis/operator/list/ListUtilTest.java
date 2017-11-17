@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * home-page:http://www.liumapp.com
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {Main.class , RedisConfig.class})
+@SpringBootTest(classes = {Main.class})
 public class ListUtilTest {
 
     @Autowired

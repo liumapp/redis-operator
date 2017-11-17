@@ -1,5 +1,6 @@
 package com.liumapp.redis.operator;
 
+import com.liumapp.redis.operator.config.RedisConfig;
 import com.liumapp.redis.operator.hash.HashUtil;
 import com.liumapp.redis.operator.list.ListUtil;
 import com.liumapp.redis.operator.set.SetUtil;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Import;
  * home-page:http://www.liumapp.com
  */
 @Configuration
+@Import({RedisConfig.class})
 public class Main {
 
     @Bean
