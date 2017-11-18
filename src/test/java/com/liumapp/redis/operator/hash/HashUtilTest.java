@@ -44,6 +44,19 @@ public class HashUtilTest {
         hashUtil.putAll("hashKey" , map);
     }
 
-    
+    /**
+     * 判断key是否存在
+     * 删除key
+     */
+    @Test
+    public void isExists () {
+        System.out.println("the hashList is : " + hashUtil.entries("hashKey"));
+        if (hashUtil.hasKey("hashKey" , "testKeyA")) {
+            hashUtil.delete("hashKey" , "testKeyA");
+        }
+        System.out.println("after delete , the hashlist now is : " + hashUtil.entries("hashKey"));
+    }
+
+        
 
 }
