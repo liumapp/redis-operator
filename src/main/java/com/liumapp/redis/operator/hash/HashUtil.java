@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 散列集
  * Created by liumapp on 11/13/17.
  * E-mail:liumapp.com@gmail.com
  * home-page:http://www.liumapp.com

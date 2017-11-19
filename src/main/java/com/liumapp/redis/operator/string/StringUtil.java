@@ -28,6 +28,7 @@ public class StringUtil {
         valOps.set(key , value);
     }
 
+
     /**
      * 偏移offset的位置后，再设置value的值
      * @param key Redis-key
@@ -46,7 +47,7 @@ public class StringUtil {
      * @param unit TimeUnit
      */
     public void set (String key , String value , long timeout , TimeUnit unit) {
-        valOps.set(key , value , timeout , unit.SECONDS);
+        valOps.set(key , value , timeout , unit);
     }
 
     public Object get (String key) {
