@@ -5,9 +5,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.Cursor;
+import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.awt.peer.SystemTrayPeer;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -57,6 +62,46 @@ public class HashUtilTest {
         System.out.println("after delete , the hashlist now is : " + hashUtil.entries("hashKey"));
     }
 
-    
+    /**
+     * 根据多个key
+     * 从散列中批量取出数据
+     */
+    @Test
+    public void multyGet () {
+        /**
+         * 这个list存放要取出来的key
+         */
+        List<String> keys = new ArrayList<String>();
+
+        keys.add("testKeyB");
+        keys.add("testKeyC");
+        keys.add("testKeyD");
+
+        System.out.println("批量获取到的结果为： " + hashUtil.multyGet("hashKey" , keys));
+    }
+
+    /**
+     * 获取一个散列集中一共有多少个key
+     */
+    @Test
+    public void howManyKey () {
+        System.out.println("hashKey散列表下一共有: " + hashUtil.size("hashKey") + "条key");
+    }
+
+    /**
+     * 对散列集的迭代
+     */
+    @Test
+    public void cursor () {
+        Cursor<Map.Entry<String, Object>> cursor = hashUtil.scan("hashKey" , ScanOptions.NONE);
+        System.out.println("开始遍历hashKey");
+        while (cursor.hasNext()) {
+            Map.Entry<String , Object> entry = cursor.next();
+            System.out.println("key is : " + entry.getKey());
+            System.out.println("value is : " + entry.getValue());
+        }
+
+    }
+
 
 }

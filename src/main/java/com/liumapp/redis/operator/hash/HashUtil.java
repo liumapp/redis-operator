@@ -68,7 +68,7 @@ public class HashUtil {
     /**
      * 批量获取
      */
-    public List<Object> multyGet (Object hashKey , Collection<Object> collection) {
+    public List<Object> multyGet (Object hashKey , Collection collection) {
         return hashOps.multiGet(hashKey , collection);
     }
 
