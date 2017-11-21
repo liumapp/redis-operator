@@ -73,3 +73,4 @@ redisTemplate.opsForZSet();//操作有序set
 
 * 这个项目几乎引用的全部都是RedisTemplate
 
+[帮助链接](http://www.jianshu.com/p/7bf5dc61ca06)

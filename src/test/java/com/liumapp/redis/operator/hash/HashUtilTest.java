@@ -9,7 +9,6 @@ import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.awt.peer.SystemTrayPeer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,6 +33,8 @@ public class HashUtilTest {
      */
     @Test
     public void put () {
+
+
         /**
          * 单插
          */
@@ -47,6 +48,26 @@ public class HashUtilTest {
         map.put("testKeyC" , "c");
         map.put("testKeyD" , "c++");
         hashUtil.putAll("hashKey" , map);
+    }
+
+    @Test
+    public void example () {
+
+        HashMap<String , Object> hashmap = new HashMap<String, Object>();
+        hashmap.put("a" , "hello worlt");
+        hashmap.put("b" , "hello lm");
+
+        HashMap<String , Object> hashMapb = new HashMap<String, Object>();
+        hashMapb.put("a2" , "hello xy");
+        hashMapb.put("b2" , "hello zl");
+
+        hashUtil.put("hashmap" , "a" , "hello world");
+        hashUtil.put("hashmap" , "b" , "hello lm");
+        System.out.println("hashmap is : " + hashUtil.entries("hashmap"));
+
+        hashUtil.putAll("hashMapb" , hashMapb);
+        System.out.println("hashMapb is : " + hashUtil.entries("hashMapb"));
+
     }
 
     /**
