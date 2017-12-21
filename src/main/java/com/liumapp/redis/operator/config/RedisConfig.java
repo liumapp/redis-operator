@@ -21,9 +21,9 @@ public class RedisConfig {
     @ConfigurationProperties(prefix = "liumapp.redis")
     public JedisConnectionFactory connectionFactory () {
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
-        jedisConnectionFactory.setHostName("localhost");
+        jedisConnectionFactory.setHostName("114.215.42.166");
         jedisConnectionFactory.setPort(6379);
-        jedisConnectionFactory.setPassword("adminadmin");
+        jedisConnectionFactory.setPassword("huluwa890TJ");
         jedisConnectionFactory.setDatabase(0);
         return jedisConnectionFactory;
     }
