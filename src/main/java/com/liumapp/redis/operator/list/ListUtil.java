@@ -4,6 +4,7 @@ import org.springframework.data.redis.core.ListOperations;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -120,6 +121,14 @@ public class ListUtil {
      * @param values 多个值
      * @return long index
      */
+
+    /**
+     * 批量把一个集合插入列表中
+     */
+    public Long leftPushAll(String key,Collection value){
+        return listOps.leftPushAll(key,value);
+    }
+
     public Long leftPushAll(String key , String... values ) {
         return listOps.leftPushAll(key , values);
     }

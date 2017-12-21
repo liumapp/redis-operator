@@ -1,12 +1,13 @@
 package com.liumapp.redis.operator.list;
 
 import com.liumapp.redis.operator.Main;
-import com.liumapp.redis.operator.config.RedisConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.*;
 
 /**
  * Created by liumapp on 11/14/17.
@@ -29,6 +30,16 @@ public class ListUtilTest {
         Long result = listUtil.leftPushAll("languagetype" , strings);
         System.out.println("insert index is : " + result);
         System.out.println("insert data is : " + listUtil.range("languagetype" , 0 , -1));
+    }
+    @Test
+    public void leftPushList(){
+        List<String> list = new ArrayList<String>();
+        list.add("zhangsan");
+        list.add("lisi");
+        list.add("wangwu");
+        Long result = listUtil.leftPushAll("user", list);
+        System.out.println("insert index is : " + result);
+        System.out.println("insert data is : " + listUtil.range("user", 0, -1));
     }
 
     /**
