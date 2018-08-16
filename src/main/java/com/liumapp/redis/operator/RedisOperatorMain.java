@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 /**
- * @author liumapp
- * @file RedisOperatorMain.java
- * @email liumapp.com@gmail.com
- * @homepage http://www.liumapp.com
- * @date 2018/8/16
+ * author liumapp
+ * file RedisOperatorMain.java
+ * email liumapp.com@gmail.com
+ * homepage http://www.liumapp.com
+ * date 2018/8/16
  */
 @Configuration
 @Import({RedisConfig.class})

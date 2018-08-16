@@ -124,11 +124,20 @@ public class ListUtil {
 
     /**
      * 批量把一个集合插入列表中
+     * @param key string key
+     * @param value collection value
+     * @return long
      */
     public Long leftPushAll(String key,Collection value){
         return listOps.leftPushAll(key,value);
     }
 
+    /**
+     * 批量插入
+     * @param key string key
+     * @param values string ...
+     * @return long
+     */
     public Long leftPushAll(String key , String... values ) {
         return listOps.leftPushAll(key , values);
     }

@@ -145,7 +145,7 @@ public class HashUtil {
     /**
      * 获取散列集里所有的键值对
      * @param hashKey object hash key
-     * @return map \<string, object>
+     * @return map
      */
     public Map<String , Object> entries (Object hashKey) {
         return hashOps.entries(hashKey);
