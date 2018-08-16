@@ -21,6 +21,10 @@ using redis in SpringBoot , with 5 kinds of data structure.
         port: 6379
         password: adminadmin
         dbIndex: 0
+        
+引入后在springboot的启动类上加上：
+
+    @Import(RedisOperatorMain.class)        
    
 
 ## 注意事项
