@@ -155,6 +155,12 @@ public class StringUtil {
         valOps.setBit(key , offset , value);
     }
 
+    /**
+     * get bit
+     * @param key string key
+     * @param offset long offset
+     * @return boolean true/false
+     */
     public boolean getBit (String key , long offset) {
         return valOps.getBit(key , offset);
     }
