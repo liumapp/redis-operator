@@ -36,6 +36,7 @@ public class StringUtilTest {
     public void delete () {
         stringUtil.set("name", "liumapp");
         System.out.println(stringUtil.get("name"));
+        Assert.assertEquals("liumapp", stringUtil.get("name"));
         stringUtil.delete("name");
         Assert.assertEquals(null, stringUtil.get("name"));
     }
