@@ -33,6 +33,14 @@ public class StringUtilTest {
     }
 
     @Test
+    public void delete () {
+        stringUtil.set("name", "liumapp");
+        System.out.println(stringUtil.get("name"));
+        stringUtil.delete("name");
+        Assert.assertEquals(null, stringUtil.get("name"));
+    }
+
+    @Test
     public void setOffset() {
         stringUtil.set("name" , "hello world");
         stringUtil.set("name" , "liumapp" , 6);

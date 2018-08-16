@@ -28,6 +28,13 @@ public class StringUtil {
         valOps.set(key , value);   
     }
 
+    /**
+     * 删除一个key-value
+     * @param key Redis-key
+     */
+    public void delete (String key) {
+        valOps.getOperations().delete(key);
+    }
 
     /**
      * 偏移offset的位置后，再设置value的值
