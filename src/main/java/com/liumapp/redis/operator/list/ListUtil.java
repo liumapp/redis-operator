@@ -97,8 +97,8 @@ public class ListUtil {
      * 移出并获取列表的第一个元素
      * 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止。
      * @param key Redis-key
-     * @param timeout
-     * @param unit
+     * @param timeout timeout
+     * @param unit time unit
      * @return return
      */
     public Object leftPop(String key , Long timeout , TimeUnit unit) {
@@ -109,7 +109,7 @@ public class ListUtil {
      * 批量把一个集合插入到列表中
      * @param key Redis-key
      * @param value Redis-value
-     * @return return
+     * @return return long
      */
     public Long leftPushAll(String key , Collections value) {
         return listOps.leftPushAll(key , value);
@@ -159,7 +159,7 @@ public class ListUtil {
      * 把value值放到key对应列表中pivot值的右面
      * 如果pivot值存在的话
      * @param key Redis-key
-     * @param pivot
+     * @param pivot pivot
      * @param value Redis-value
      * @return return
      */
@@ -193,7 +193,7 @@ public class ListUtil {
      * 批量插入列表
      * @param key Redis-key
      * @param value Redis-value
-     * @return return
+     * @return return long
      */
     public Long rightPushAll(String key , Collections value) {
         return listOps.rightPushAll(key , value);
@@ -227,7 +227,7 @@ public class ListUtil {
      * @param key Redis-key
      * @param count count-number
      * @param value Redis-value
-     * @return return
+     * @return return long
      */
     public Long remove(String key , Long count , Object value) {
         return listOps.remove(key , count , value);
@@ -238,7 +238,7 @@ public class ListUtil {
      * 下标是从0开始的
      * @param key Redis-key
      * @param index list-index
-     * @return return
+     * @return return long
      */
     public Object index(String key , Long index) {
         return listOps.index(key , index);
@@ -249,7 +249,7 @@ public class ListUtil {
      * 并将该元素添加到另一个列表并返回
      * @param sourceKey source list key
      * @param destinationKey destination list key
-     * @return return
+     * @return return object
      */
     public Object rightPopAndLeftPush(String sourceKey , String destinationKey) {
         return listOps.rightPopAndLeftPush(sourceKey , destinationKey);
@@ -263,7 +263,7 @@ public class ListUtil {
      * @param destinationKey destination list key
      * @param timeout limited time
      * @param unit TimeUnit
-     * @return return
+     * @return return object
      */
     public Object rightPopAndLeftPush(String sourceKey , String destinationKey , Long timeout , TimeUnit unit) {
         return listOps.rightPopAndLeftPush(sourceKey , destinationKey , timeout , unit);

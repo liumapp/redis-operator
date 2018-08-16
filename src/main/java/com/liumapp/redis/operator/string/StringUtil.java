@@ -122,6 +122,13 @@ public class StringUtil {
         valOps.append(key , value);
     }
 
+    /**
+     * 获取指定key的value
+     * @param key string key
+     * @param start long
+     * @param end long
+     * @return
+     */
     public String get (String key , long start , long end) {
         return valOps.get(key , start , end);
     }
@@ -129,7 +136,7 @@ public class StringUtil {
     /**
      * 返回value值的长度
      * @param key Redis-key
-     * @return return
+     * @return return long
      */
     public Long size (String key) {
         return valOps.size(key);
