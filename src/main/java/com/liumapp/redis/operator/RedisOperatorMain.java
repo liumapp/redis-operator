@@ -6,6 +6,7 @@ import com.liumapp.redis.operator.list.ListUtil;
 import com.liumapp.redis.operator.set.SetUtil;
 import com.liumapp.redis.operator.string.StringUtil;
 import com.liumapp.redis.operator.zset.ZsetUtil;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.Import;
  * homepage http://www.liumapp.com
  * date 2018/8/16
  */
+@EnableAutoConfiguration
 @Configuration
 @Import({RedisConfig.class})
 public class RedisOperatorMain {
