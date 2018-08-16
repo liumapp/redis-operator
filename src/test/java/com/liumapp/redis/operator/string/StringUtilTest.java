@@ -1,6 +1,6 @@
 package com.liumapp.redis.operator.string;
 
-import com.liumapp.redis.operator.Main;
+import com.liumapp.redis.operator.RedisOperatorMain;
 import com.liumapp.redis.operator.config.RedisConfig;
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import java.util.List;
  * home-page:http://www.liumapp.com
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {Main.class , RedisConfig.class})
+@SpringBootTest(classes = {RedisOperatorMain.class , RedisConfig.class})
 public class StringUtilTest {
 
     @Autowired

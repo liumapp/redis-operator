@@ -1,6 +1,6 @@
 package com.liumapp.redis.operator.hash;
 
-import com.liumapp.redis.operator.Main;
+import com.liumapp.redis.operator.RedisOperatorMain;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.Map;
  * home-page:http://www.liumapp.com
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = { Main.class })
+@SpringBootTest(classes = { RedisOperatorMain.class })
 public class HashUtilTest {
 
     @Autowired

@@ -60,7 +60,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>./</classpathPrefix>
-              <mainClass>com.liumapp.redis.operator.Main</mainClass>
+              <mainClass>com.liumapp.redis.operator.RedisOperatorMain</mainClass>
             </manifest>
           </archive>
         </configuration>

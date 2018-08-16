@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @Import({RedisConfig.class})
-public class Main {
+public class RedisOperatorMain {
 
     @Bean
     public StringUtil stringUtil () {

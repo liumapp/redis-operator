@@ -25,7 +25,7 @@ public class StringUtil {
      * @param value Redis-value
      */
     public void set (String key , String value) {
-        valOps.set(key , value);
+        valOps.set(key , value);   
     }
 
 
