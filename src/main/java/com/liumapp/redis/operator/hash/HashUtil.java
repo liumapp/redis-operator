@@ -25,6 +25,9 @@ public class HashUtil {
 
     /**
      * 插入新的hash
+     * @param hashKey object hash key
+     * @param key string map key
+     * @param value string map value
      */
     public void put (Object hashKey , String key , Object value) {
         hashOps.put(hashKey , key , value);
@@ -32,6 +35,10 @@ public class HashUtil {
 
     /**
      * 仅当key不存在时才设置散列hashKey对应的key值。
+     * @param hashKey object hash key
+     * @param key string map key
+     * @param value string map value
+     * @return boolean
      */
     public Boolean putIfAbsent (Object hashKey , String key , Object value) {
         return hashOps.putIfAbsent(hashKey , key , value);
@@ -39,6 +46,8 @@ public class HashUtil {
 
     /**
      * 把一个map装入hash中
+     * @param hashKey object hash key
+     * @param map hash map
      */
     public void putAll (Object hashKey , Map<String , Object> map) {
         hashOps.putAll(hashKey , map);
@@ -46,6 +55,9 @@ public class HashUtil {
 
     /**
      * 批量删除hash中的键值对
+     * @param hashKey object hash key
+     * @param keys string ... keys
+     * @return long
      */
     public Long delete (Object hashKey , String... keys) {
         return hashOps.delete(hashKey , keys);
@@ -53,6 +65,8 @@ public class HashUtil {
 
     /**
      * 判断一个hash中是否存在指定的键值对
+     * @param hashKey object hash key
+     * @param key string key
      * @return boolean
      */
     public boolean hasKey (Object hashKey , String key) {
@@ -61,6 +75,9 @@ public class HashUtil {
 
     /**
      * 获取hash中指定的键值
+     * @param hashKey object hash key
+     * @param key string key
+     * @return object
      */
     public Object get (Object hashKey , String key) {
         return hashOps.get(hashKey , key);
@@ -68,6 +85,9 @@ public class HashUtil {
 
     /**
      * 批量获取
+     * @param hashKey object hash key
+     * @param collection collection
+     * @return list
      */
     public List<Object> multyGet (Object hashKey , Collection collection) {
         return hashOps.multiGet(hashKey , collection);
@@ -75,6 +95,10 @@ public class HashUtil {
 
     /**
      * key对应的值自增number的数值
+     * @param hashKey object hash key
+     * @param key string key
+     * @param number long number
+     * @return long
      */
     public Long increment (Object hashKey , String key , long number) {
         return hashOps.increment(hashKey , key , number);
@@ -82,6 +106,10 @@ public class HashUtil {
 
     /**
      * 浮点数的自增
+     * @param hashKey objct hash key
+     * @param key string key
+     * @param number double number
+     * @return double
      */
     public Double increment (Object hashKey , String key , double number) {
         return hashOps.increment(hashKey , key , number);
@@ -89,6 +117,8 @@ public class HashUtil {
 
     /**
      * 获取一个散列集里所有的key
+     * @param hashKey object hash key
+     * @return set
      */
     public Set keys (Object hashKey) {
         return hashOps.keys(hashKey);
@@ -96,6 +126,8 @@ public class HashUtil {
 
     /**
      * 返回一个散列集里所有的value
+     * @param hashKey object hash key
+     * @return list
      */
     public List values (Object hashKey) {
         return hashOps.values(hashKey);
@@ -103,6 +135,8 @@ public class HashUtil {
 
     /**
      * 返回一个散列集里一共有多少个key
+     * @param hashKey object hash key
+     * @return long
      */
     public Long size (Object hashKey) {
         return hashOps.size(hashKey);
@@ -110,6 +144,8 @@ public class HashUtil {
 
     /**
      * 获取散列集里所有的键值对
+     * @param hashKey object hash key
+     * @return map \<string, object>
      */
     public Map<String , Object> entries (Object hashKey) {
         return hashOps.entries(hashKey);
@@ -117,6 +153,9 @@ public class HashUtil {
 
     /**
      * 迭代查询散列集中的数据
+     * @param hashKey object hash key
+     * @param scanOptions scan options
+     * @return cursor
      */
     public Cursor<Map.Entry<String , Object>> scan (Object hashKey , ScanOptions scanOptions ) {
         return hashOps.scan(hashKey , scanOptions);
