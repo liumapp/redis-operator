@@ -3,10 +3,16 @@ package com.liumapp.redis.operator.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisPassword;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
+
+import java.time.Duration;
 
 /**
  * file RedisConfig.java
@@ -21,19 +27,34 @@ public class RedisConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "liumapp.redis")
-    public JedisConnectionFactory connectionFactory () {
-        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
-        jedisConnectionFactory.setHostName("localhost");
-        jedisConnectionFactory.setPort(6379);
-        jedisConnectionFactory.setPassword("adminadmin");
-        jedisConnectionFactory.setDatabase(0);
-        return jedisConnectionFactory;
+    public RedisConnector redisConnector () {
+        RedisConnector redisConnector = new RedisConnector();
+        redisConnector.setHostName("localhost");
+        redisConnector.setPassword("adminadmin");
+        redisConnector.setPort(6379);
+        redisConnector.setDbIndex(0);
+        return redisConnector;
     }
 
     @Bean
-    public RedisTemplate<String , Object> redisTemplate (JedisConnectionFactory jedisConnectionFactory) {
+    public JedisConnectionFactory connectionFactory (RedisConnector redisConnector) {
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration ();
+        redisStandaloneConfiguration.setHostName(redisConnector.getHostName());
+        redisStandaloneConfiguration.setPort(redisConnector.getPort());
+        redisStandaloneConfiguration.setPassword(RedisPassword.of(redisConnector.getPassword()));
+
+        JedisClientConfiguration.JedisClientConfigurationBuilder jedisClientConfiguration = JedisClientConfiguration.builder();
+        jedisClientConfiguration.connectTimeout(Duration.ofMillis(5000));//  connection timeout
+
+        JedisConnectionFactory factory = new JedisConnectionFactory(redisStandaloneConfiguration,
+                jedisClientConfiguration.build());
+        return factory;
+    }
+
+    @Bean
+    public RedisTemplate<String , Object> redisTemplate (JedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String , Object> redisTemplate = new RedisTemplate<String, Object>();
-        redisTemplate.setConnectionFactory(jedisConnectionFactory);
+        redisTemplate.setConnectionFactory(redisConnectionFactory);
 
         /**
          * 不设置Serializer的话
@@ -45,9 +66,9 @@ public class RedisConfig {
     }
 
     @Bean
-    public StringRedisTemplate stringRedisTemplatek (JedisConnectionFactory jedisConnectionFactory) {
+    public StringRedisTemplate stringRedisTemplatek (JedisConnectionFactory redisConnectionFactory) {
         StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
-        stringRedisTemplate.setConnectionFactory(jedisConnectionFactory);
+        stringRedisTemplate.setConnectionFactory(redisConnectionFactory);
         return stringRedisTemplate;
     }
 
