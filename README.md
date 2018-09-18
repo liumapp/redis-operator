@@ -78,3 +78,31 @@ redisTemplate.opsForZSet();//操作有序set
 * 这个项目几乎引用的全部都是RedisTemplate
 
 [帮助链接](http://www.jianshu.com/p/7bf5dc61ca06)
+
+
+## 注意事项
+
+Spring Boot2.x系列默认使用的Redis连接为Lettuce，而非Jedis
+
+所以比较习惯使用Jedis的小伙伴们，请一定记得排除Lettuce依赖，并额外引入Jedis依赖
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <exclusions>
+        <exclusion>
+         <groupId>io.lettuce</groupId>
+         <artifactId>lettuce-core</artifactId>
+        </exclusion>
+      </exclusions>            
+    </dependency>        
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency> 
+    
+否则直接使用Jedis将会报以下异常：
+
+    Caused by: java.lang.ClassNotFoundException: redis.clients.jedis.JedisPoolConfig
+    
+        
