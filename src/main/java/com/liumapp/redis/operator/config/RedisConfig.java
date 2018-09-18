@@ -9,9 +9,12 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
 
 /**
- * Created by liumapp on 9/28/17.
- * E-mail:liumapp.com@gmail.com
- * home-page:http://www.liumapp.com
+ * file RedisConfig.java
+ * author liumapp
+ * github https://github.com/liumapp
+ * email liumapp.com@gmail.com
+ * homepage http://www.liumapp.com
+ * date 2018/9/18
  */
 @Configuration
 public class RedisConfig {
@@ -20,9 +23,9 @@ public class RedisConfig {
     @ConfigurationProperties(prefix = "liumapp.redis")
     public JedisConnectionFactory connectionFactory () {
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
-        jedisConnectionFactory.setHostName("114.215.42.166");
+        jedisConnectionFactory.setHostName("localhost");
         jedisConnectionFactory.setPort(6379);
-        jedisConnectionFactory.setPassword("huluwa890TJ");
+        jedisConnectionFactory.setPassword("adminadmin");
         jedisConnectionFactory.setDatabase(0);
         return jedisConnectionFactory;
     }
