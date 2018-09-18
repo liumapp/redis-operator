@@ -23,12 +23,6 @@
       <url>http://www.liumapp.com</url>
       <email>liumapp.com@gmail.com</email>
     </developer>
-    <developer>
-      <id>hxy</id>
-      <name>hxy</name>
-      <url>https://github.com/haoxiaoyong1014</url>
-      <email>hxyHelloWorld@163.com</email>
-    </developer>
   </developers>
 
   <dependencies>
